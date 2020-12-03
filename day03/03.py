@@ -19,10 +19,8 @@ def traverse_map(trees, rule):
 
 def extend(trees, rule):
     res = list()
-    print(len(trees))
     for t in trees:
         res.append(t*math.ceil(((len(trees)*rule.x)/(len(trees[0]))*rule.y)))
-    print(len(res[0]))
     return res
 
 def product(list):
