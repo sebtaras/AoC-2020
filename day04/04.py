@@ -40,9 +40,12 @@ def check_hcl(hair_color):
         return False
     elif hair_color[0] == "#" and len(hair_color) == 7:
         for c in hair_color[1:]:
-            if ord(c) <= 102 and ord(c) >= 97 or ord(c) <=57 and ord(c) >= 48:
-                return True
+            if c.isalpha() and ord(c) > 102 or ord(c) < 48 or ord(c) > 57 and ord(c) < 97:
+                print(hair_color)
+                return False
+        return True
     else:
+        print(hair_color)
         return False
 
 def check_ecl(eye_color):
