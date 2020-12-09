@@ -9,14 +9,11 @@ def how_many_contain(rules, color, visited):
 
 def how_many_inside(rules, color):
     cnt = 0
-    for r in rules:
-        if r == color:
-            for l in rules[r]:
-                num = l.split(" ")[0]
-                if num != "no":
-                    new_color = l.split(" ")[1] + " " + l.split(" ")[2]
-                    cnt = cnt + int(num) + int(num) * how_many_inside(rules, new_color)
-        continue
+    for l in rules[color]:
+        num = l.split(" ")[0]
+        if num != "no":
+            new_color = l.split(" ")[1] + " " + l.split(" ")[2]
+            cnt = cnt + int(num) + int(num) * how_many_inside(rules, new_color)
     return cnt
 
 f = open("07input.txt")
@@ -29,8 +26,7 @@ for line in f:
     children = temp[1].split(", ")
     rules[parent] = children
 
-visited = []
-first = how_many_contain(rules, COLOR, visited)
+first = how_many_contain(rules, COLOR, [])
 second = how_many_inside(rules, COLOR)
 print(first, second)
 
