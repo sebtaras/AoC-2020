@@ -10,8 +10,7 @@ def traverse_map(trees, rule):
     num_trees = 0
     for i in range(0, len(trees), rule.y):
         num_trees = num_trees + 1 if trees[i][position] == '#' else num_trees
-        position += rule.x
-        position = position if position < len(trees[0]) else position - len(trees[0])
+        position = (position + rule.x)%len(trees[0])
     return num_trees
 
 f = open("03input.txt")
