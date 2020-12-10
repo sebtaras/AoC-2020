@@ -13,23 +13,6 @@ def num_of_diffs(output_joltages):
         prev = curr
     return diff_1, diff_3
 
-# def num_of_arrangements(output_joltages):
-#     valid_arrangements = [output_joltages]
-#     new_arrangements = valid_arrangements[:]
-#     while len(new_arrangements) > 0:
-#         temp = []
-#         for arrangement in new_arrangements:
-#             for i in range(2, len(arrangement)):
-#                 if arrangement[i] - arrangement[i-2] <= 3:
-#                     new_arrangement = arrangement[:]
-#                     new_arrangement.pop(i-1)    
-#                     temp.append(new_arrangement)
-#         for t in temp:
-#             if t not in valid_arrangements:
-#                 valid_arrangements.append(t)
-#         new_arrangements = temp[:]
-#     return len(valid_arrangements)
-
 def num_of_arrangements(output_joltages):
     parts = []
     cutoff = 0
@@ -47,7 +30,6 @@ def num_of_arrangements(output_joltages):
         elif len(p) == 5:
             t = 1 + len(p)-2 + len(p)-2
         res = res*t
-        #print(p, t)
     return res
 
 f = open("day10input.txt")
