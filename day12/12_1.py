@@ -46,7 +46,7 @@ class Position:
         return "X: " + str(self.x) + "\nY: " + str(self.y) + "\nFacing: " + str(self.dir) + "\n"
 
 
-f = open("11input.txt")
+f = open("12input.txt")
 
 pos = Position()
 

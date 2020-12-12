@@ -57,7 +57,7 @@ class Position:
         return "X: " + str(self.x) + "\tX_wp: " + str(self.wp_x) + "\nY: " + str(self.y) +"\tY_wp: " + str(self.wp_y) + "\nFacing: " + str(self.dir) + "\n"
 
 
-f = open("11input.txt")
+f = open("12input.txt")
 
 pos = Position()
 
