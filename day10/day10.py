@@ -24,12 +24,13 @@ def num_of_arrangements(output_joltages):
     for p in parts:
         t=1
         if len(p) == 3:
-            t = 1 + len(p)-2
+            t = 2
         elif len(p) == 4:
-            t = 1 + len(p)-2 + len(p)-3
+            t = 4
         elif len(p) == 5:
-            t = 1 + len(p)-2 + len(p)-2
+            t = 7
         res = res*t
+        print(p, t)
     return res
 
 f = open("day10input.txt")
